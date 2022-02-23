@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static int	ft_check(const char *str, int i, int n)
+static long	ft_check(const char *str, int i, int n)
 {
 	int	number;
 	int	help;
@@ -50,3 +50,8 @@ int	ft_atoi(const char *str)
 	number = ft_check(str, sign, n);
 	return (number);
 }
+
+// int main(int ac, char **av)
+// {
+//     printf("%d \n", ft_atoi(av[1]));
+// }
