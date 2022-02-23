@@ -1,6 +1,5 @@
 
-#include <unistd.h>
-#include <limits.h>
+#include "push_swap.h"
 
 typedef struct s_test
 {
@@ -8,14 +7,21 @@ typedef struct s_test
 	int	**tab2;
 }	t_test;
 
-int	checker(int num)
+int	checker(char *str)
 {
-	if (num >= -2147483648 && num <= 2147483647)
+	int num;
+
+	num = ft_atoi(str);
+	if (num != 0 && num != -1)
 	{
-		return (1);
+		if (num >= -2147483648 && num <= 2147483647)
+		{
+			return (1);
+		}
+		else
+			return (5);
 	}
-	else
-		return (5);
+	return 0;
 }
 
 
@@ -44,6 +50,12 @@ int main(int ac, char **av)
 					write (1, "only num\n", 10);
 					exit(0);
 				}
+			}
+			res = checker(av[j]);
+			if (res != 1)
+			{
+				write (1, "only integer\n", 14);
+				exit(0);
 			}
 			i = 0;
 			j++;
