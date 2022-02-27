@@ -1,58 +1,50 @@
-void	ft_print_parametre(int s, char **b)
-{
-	int	i;
-	int	a;
+#include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
-	i = 0;
-	a = 1;
-	while (a <= (s - 1))
-	{
-		while (b[a][i])
-		{
-			write (1, &b[a][i], 1);
-			i++;
-		}
-		i = 0;
-		write (1, "\n", 1);
-		a++;
-	}
+int top = 0;
+int empty = 0;
+int	size = 5;
+int tab[5];
+
+int	push(int value)
+{
+	if (top >= (size))
+		return 1;
+	tab[top] = value;
+	top++;
+	return 0;
 }
 
-int	ft_strcmp(char *s1, char *s2)
+int pop()
 {
-	int	i;
+	int a;
 
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+	if (top == empty)
+		return 0;
+	top--;
+	a = tab[top];
+	return a;
 }
 
-int	main(int ac, char **av)
+int main(void)
 {
-	int		i;
-	int		k;
-	char	*temp;
+	push(15);
+	push(223);
+	push(120);
+	push(187);
+	push(14);
 
-	i = 1;
-	if (ac > 1)
-	{
-		while (i < (ac - 1))
-		{
-			k = ft_strcmp(av[i], av[i + 1]);
-			if (k > 0)
-			{
-				temp = av[i];
-				av[i] = av[i + 1];
-				av[i + 1] = temp;
-				i = 0;
-			}
-			i++;
-		}
-		ft_print_parametre(ac, av);
-	}
+	int res;
+	res = pop();
+	printf("%d \n", res);
+	res = pop();
+	printf("%d \n", res);
+	res = pop();
+	printf("%d \n", res);
+	res = pop();
+	printf("%d \n", res);
+	res = pop();
+	printf("%d \n", res);
 }
