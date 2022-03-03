@@ -54,4 +54,4 @@ int	ft_atoi(const char *str)
 // int main(int ac, char **av)
 // {
 //     printf("%d \n", ft_atoi(av[1]));
-// }
+// }otmallah zaml
