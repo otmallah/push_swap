@@ -40,7 +40,7 @@ void	only_num(char *str)
 			i++;
 		else
 		{
-			write (1, "only num\n", 10);
+			write (1, "only int\n", 10);
 			exit(0);
 		}
 	}

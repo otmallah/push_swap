@@ -22,6 +22,12 @@ typedef struct s_stack
 	int	*array;
 }	t_stack;
 
+typedef struct s_iter
+{
+	int count;
+}	t_iter;
+
+
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -35,5 +41,12 @@ t_list	*ft_lstnew(void *content);
 
 int	checker(char *str);
 void	only_num(char *str);
+void	swap_a(t_stack	*stack);
+void	rever_a(t_stack *stack);
+void	r_rev_a(t_stack	*stack);
+void    rand_num(t_stack *stack);
+void	push_b(t_stack	*stack_a, t_stack	*stack_b, t_iter *index);
+void	rand_5_num(t_stack *stack_a, t_stack *stack_b);
+
 
 #endif
