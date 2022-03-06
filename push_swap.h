@@ -25,6 +25,10 @@ typedef struct s_stack
 typedef struct s_iter
 {
 	int count;
+	int count2;
+	int count3;
+	int count4;
+	int count5;
 }	t_iter;
 
 
@@ -41,12 +45,12 @@ t_list	*ft_lstnew(void *content);
 
 int	checker(char *str);
 void	only_num(char *str);
-void	swap_a(t_stack	*stack);
-void	rever_a(t_stack *stack);
-void	r_rev_a(t_stack	*stack);
-void    rand_num(t_stack *stack);
+void	swap_a(t_stack	*stack, t_iter *index);
+void	rever_a(t_stack *stack, t_iter	*index);
+void	r_rev_a(t_stack	*stack, t_iter	*index);
+void    rand_num(t_stack *stack, t_iter *index);
 void	push_b(t_stack	*stack_a, t_stack	*stack_b, t_iter *index);
-void	rand_5_num(t_stack *stack_a, t_stack *stack_b);
-
+void	rand_5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index);
+void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index);
 
 #endif

@@ -12,23 +12,24 @@
 
 #include "../push_swap.h"
 
-void	swap_a(t_stack	*stack)
+void	swap_a(t_stack	*stack, t_iter *index)
 {
-	int i = 0;
 	int a;
+	int i;
 
+	i = index->count3;
 	a = stack->array[i];
 	stack->array[i]=  stack->array[i + 1];
 	stack->array[i + 1] = a;
 	write(1, "sa\n", 3);
 }
 
-void	rever_a(t_stack *stack)
+void	rever_a(t_stack *stack, t_iter	*index)
 {
-	int i;
 	int a;
+	int i;
 
-	i = 0;
+	i = index->count3;
 	a = stack->array[i];
 	while (i < (stack->i - 1))
 	{
@@ -40,18 +41,18 @@ void	rever_a(t_stack *stack)
 	write(1, "ra\n", 3);
 }
 
-void	r_rev_a(t_stack	*stack)
+void	r_rev_a(t_stack	*stack, t_iter	*index)
 {
 	int a;
 	int j = stack->i - 1;
 
 	a = stack->array[j];
-	while (j > 0)
+	while (j > index->count3)
 	{
 		stack->array[j] = stack->array[j - 1];
 		j--;
 	}
-	if (j == 0)
+	if (j == index->count3)
 		stack->array[j] = a;
 	write(1, "rra\n", 4);
 }

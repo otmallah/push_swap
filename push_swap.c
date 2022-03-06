@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include "push_swap.h"
 
+int	ft_tablen(t_stack	*stacka);
+
 int		push(t_stack *stack, int len, int value)
 {
 	if (!stack->array)
@@ -18,24 +20,28 @@ int		push(t_stack *stack, int len, int value)
 	return 0;
 }
 
-void	ft_printa(t_stack	*stack , int a)
+void	ft_printa(t_stack	*stack , t_iter *index, int a)
 {
-	int i = 0;
-
 	puts("--------stack a---------");
-	while (i < a)
+	printf("%d \n" , index->count3);
+	while (index->count3 < a)
+	{
+		printf("|          %d           |\n" ,  stack->array[index->count3]);
+		index->count3++;
+	}
+}
+
+void	ft_printb(t_stack	*stack, t_iter *index)
+{
+	int i;
+
+	i = 0;
+	puts("--------stack b---------");
+	while (i < index->count2)
 	{
 		printf("|          %d           |\n" ,  stack->array[i]);
 		i++;
 	}
-}
-
-void	ft_printb(t_stack	*stack)
-{
-	int i = 0;
-
-	puts("--------stack b---------");
-	printf("|          %d           |\n" ,  stack->array[i]);
 }
 
 int main(int ac, char **av)
@@ -46,8 +52,13 @@ int main(int ac, char **av)
 
 	t_stack stack;
 	t_stack stackb;
-	//t_iter index;
+	t_iter index;
 
+	index.count = 0;
+	index.count2 = 0;
+	index.count3 = 0;
+	index.count4 = 0;
+	index.count5 = 0;
 	stackb.j = 0;
 	if (ac == 1)
 		exit(0);
@@ -86,16 +97,17 @@ int main(int ac, char **av)
 			j++;
 			i++;
 		}
-		//stack.i--;
 		if (ac == 4)
-			rand_num(&stack);
+			rand_num(&stack, &index);
 		if (ac == 6)
 		{
-			stackb.array = malloc(sizeof(int) * 1);
-			rand_5_num(&stack, &stackb);
-			ft_printb(&stackb);
+			stackb.array = (int *)malloc(sizeof(int) * a);
+			rand_5_num(&stack, &stackb, &index);
+			ft_printb(&stackb, &index);
 		}
-		ft_printa(&stack, a);
-		//system("leaks a.out");
+		ft_printa(&stack, &index, a);
+		//rand_num(&stack, &index);
 	}
-}	
+	//system("leaks a.out");
+
+}

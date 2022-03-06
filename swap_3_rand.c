@@ -13,24 +13,24 @@
 
 #include "push_swap.h"
 
-void    rand_num(t_stack *stack)
+void    rand_num(t_stack *stack , t_iter *index)
 {
-    if (stack->array[0] < stack->array[1] && stack->array[0] < stack->array[2] && stack->array[1] < stack->array[2])
+    if (stack->array[index->count3] < stack->array[index->count3 + 1] && stack->array[index->count3] < stack->array[index->count3 + 2] && stack->array[index->count3 + 1] < stack->array[index->count3 + 2])
         puts("m9adine hh");
-    if (stack->array[0] > stack->array[1] && stack->array[1] < stack->array[2] && stack->array[2] > stack->array[0])
-        swap_a(stack);
-    else if (stack->array[2] < stack->array[1] && stack->array[1] < stack->array[0] && stack->array[2] < stack->array[0])
+    if (stack->array[index->count3] > stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3 + 2] && stack->array[index->count3 + 2] > stack->array[index->count3])
+        swap_a(stack, index);
+    else if (stack->array[index->count3 + 2] < stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3] && stack->array[index->count3 + 2] < stack->array[index->count3])
     {
-        swap_a(stack);
-        r_rev_a(stack);
+        swap_a(stack , index);
+        r_rev_a(stack, index);
     }
-    else if (stack->array[0] > stack->array[1] && stack->array[1] < stack->array[2] && stack->array[0] > stack->array[2])
-        rever_a(stack);
-    else if (stack->array[0] <  stack->array[1] && stack->array[0] < stack->array[2] && stack->array[1] > stack->array[2])
+    else if (stack->array[index->count3] > stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3 + 2] && stack->array[index->count3] > stack->array[index->count3 + 2])
+        rever_a(stack, index);
+    else if (stack->array[index->count3] <  stack->array[index->count3 + 1] && stack->array[index->count3] < stack->array[index->count3 + 2] && stack->array[index->count3 + 1] > stack->array[index->count3 + 2])
     {
-        swap_a(stack);
-        rever_a(stack);
+        swap_a(stack, index);
+        rever_a(stack, index);
     }
-    else if (stack->array[0] < stack->array[1] && stack->array[1] > stack->array[2] && stack->array[0] > stack->array[2])
-        r_rev_a(stack);
+    else if (stack->array[index->count3] < stack->array[index->count3 + 1] && stack->array[index->count3 + 1] > stack->array[index->count3 + 2] && stack->array[index->count3] > stack->array[index->count3 + 2])
+        r_rev_a(stack, index);
 }
