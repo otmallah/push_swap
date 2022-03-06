@@ -23,7 +23,6 @@ int		push(t_stack *stack, int len, int value)
 void	ft_printa(t_stack	*stack , t_iter *index, int a)
 {
 	puts("--------stack a---------");
-	printf("%d \n" , index->count3);
 	while (index->count3 < a)
 	{
 		printf("|          %d           |\n" ,  stack->array[index->count3]);

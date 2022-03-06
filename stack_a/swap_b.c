@@ -14,18 +14,34 @@
 
 void	push_b(t_stack	*stack_a, t_stack	*stack_b, t_iter *index)
 {
-	stack_b->array[index->count] = stack_a->array[index->count];
+	int j;
+	int a;
+
+	a = stack_b->array[0];
+	stack_b->array[0] = stack_a->array[index->count];
+	if (index->count != 0)
+	{
+		j = index->count;
+		//printf("%d \n" , j);
+		//printf("%d \n", stack_b->array[j + 1]);
+		while (j > 1)
+		{
+			printf("p = %d \n", stack_b->array[j]);
+			stack_b->array[j + 1] = stack_b->array[j];
+			j--;
+		}
+		if (j == 1)
+			stack_b->array[j] = a;
+	}
 	index->count += 1;
-	write(1, "pb\n", 3);
 	stack_b->j++;;
 	index->count3++;
 	index->count2++;
+	write(1, "pb\n", 3);
 }
-
 
 void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index)
 {
-	puts("jnsasssa");
 	stacka->array[index->count3 - 1] = stackb->array[index->count4];
 	index->count3--;
 	index->count4++;

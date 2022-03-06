@@ -17,10 +17,11 @@ void	rand_5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index)
 {
 	push_b(stack_a, stack_b, index);
 	push_b(stack_a, stack_b, index);
-	rand_num(stack_a, index);
-	push_a(stack_a, stack_b, index);
+	push_b(stack_a, stack_b, index);
+	//rand_num(stack_a, index);
+	//push_a(stack_a, stack_b, index);
+	////rever_a(stack_a, index);
+	////swap_a(stack_a, index);
+	//push_a(stack_a, stack_b, index);
 	//rever_a(stack_a, index);
-	//swap_a(stack_a, index);
-	push_a(stack_a, stack_b, index);
-	rever_a(stack_a, index);
 }
