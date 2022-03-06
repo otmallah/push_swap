@@ -26,14 +26,8 @@ void	push_b(t_stack	*stack_a, t_stack	*stack_b, t_iter *index)
 void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index)
 {
 	puts("jnsasssa");
-	//index->count5 = index->count3;
-	//printf("%d \n" , stacka->array[index->count5 - 1]);
-	//if (index->count4 != 1)
-	//	stacka->array[index->count3 - 2] = stackb->array[index->count4];
-	//	//index->count3--;
-	//else
 	stacka->array[index->count3 - 1] = stackb->array[index->count4];
 	index->count3--;
 	index->count4++;
 	index->count2--;
-}
+}     
