@@ -12,38 +12,41 @@
 
 #include "../push_swap.h"
 
+void	puush_again(t_stack	*stackb, t_iter *index)
+{
+	int	a;
+	int i = 0;
+	int j;
+
+	a  = stackb->array[index->count];
+	j = index->count;
+	while (i < index->count)
+	{
+		stackb->array[j] = stackb->array[j - 1];
+		i++;
+		j--;
+	}
+	if (i == index->count)
+		stackb->array[0] = a;
+}
+
 void	push_b(t_stack	*stack_a, t_stack	*stack_b, t_iter *index)
 {
-	int j;
-	int a;
 
-	a = stack_b->array[0];
-	stack_b->array[0] = stack_a->array[index->count];
-	if (index->count != 0)
-	{
-		j = index->count;
-		//printf("%d \n" , j);
-		//printf("%d \n", stack_b->array[j + 1]);
-		while (j > 1)
-		{
-			printf("p = %d \n", stack_b->array[j]);
-			stack_b->array[j + 1] = stack_b->array[j];
-			j--;
-		}
-		if (j == 1)
-			stack_b->array[j] = a;
-	}
+	stack_b->array[index->count] = stack_a->array[index->count];
+	puush_again(stack_b, index);
 	index->count += 1;
-	stack_b->j++;;
+	stack_b->j++;
 	index->count3++;
 	index->count2++;
-	write(1, "pb\n", 3);
+	write (1, "pb\n", 3);
 }
 
 void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index)
 {
-	stacka->array[index->count3 - 1] = stackb->array[index->count4];
 	index->count3--;
+	stacka->array[index->count3] = stackb->array[index->count4];
 	index->count4++;
-	index->count2--;
+	write (1, "pa\n", 3);
+	//index->num_sec--;
 }     

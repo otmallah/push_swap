@@ -12,16 +12,71 @@
 
 #include "push_swap.h"
 
+int	num(t_stack *stacka, t_iter *index)
+{
+	float i;
+	float p = 0;
+	int a = 0;
+	int b= 0;
+	int idx;
+
+	a = index->count3;
+	//printf("first a%d \n",a);
+	//printf("array%d \n",stacka->array[a]);
+	while (a < index->num_arg)
+	{
+		i = stacka->array[a] / 2;
+		if (a == index->count3)
+		{
+			p = i;
+			b = stacka->array[a];
+			idx = a;
+		}
+		if (i < p)
+		{
+			p = i;
+			b = stacka->array[a];
+			idx = a;
+		}
+		a++;
+	}
+	//printf("sghiire = %d \n" , b);
+	return idx;
+}
+
+void	rand5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index)
+{
+	int a;
+	int i = 0;
+
+	while (i < 2)
+	{
+		a = num(stack_a, index);
+		if (a == index->count3)
+		{
+			push_b(stack_a, stack_b,index);
+			i++;
+		}
+		else if (a == index->count3 + 1)
+			swap_a(stack_a, index);
+		else if (a == index->count3 + 2)
+		{
+			rever_a(stack_a, index);
+			rever_a(stack_a, index);
+		}
+		else if (a == index->count3 + 3)
+			r_rev_a(stack_a, index);
+		else if (a == index->count3 + 4)
+		{
+			r_rev_a(stack_a, index);
+		}
+	}
+}
 
 void	rand_5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index)
 {
-	push_b(stack_a, stack_b, index);
-	push_b(stack_a, stack_b, index);
-	push_b(stack_a, stack_b, index);
-	//rand_num(stack_a, index);
-	//push_a(stack_a, stack_b, index);
-	////rever_a(stack_a, index);
-	////swap_a(stack_a, index);
-	//push_a(stack_a, stack_b, index);
-	//rever_a(stack_a, index);
+	rand5_num(stack_a, stack_b, index);
+	rand_num(stack_a, index);
+	push_a(stack_a, stack_b, index);
+	push_a(stack_a, stack_b, index);
 }

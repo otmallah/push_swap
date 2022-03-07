@@ -15,8 +15,6 @@
 
 void    rand_num(t_stack *stack , t_iter *index)
 {
-    if (stack->array[index->count3] < stack->array[index->count3 + 1] && stack->array[index->count3] < stack->array[index->count3 + 2] && stack->array[index->count3 + 1] < stack->array[index->count3 + 2])
-        puts("m9adine hh");
     if (stack->array[index->count3] > stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3 + 2] && stack->array[index->count3 + 2] > stack->array[index->count3])
         swap_a(stack, index);
     else if (stack->array[index->count3 + 2] < stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3] && stack->array[index->count3 + 2] < stack->array[index->count3])

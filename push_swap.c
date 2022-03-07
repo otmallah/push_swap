@@ -32,14 +32,11 @@ void	ft_printa(t_stack	*stack , t_iter *index, int a)
 
 void	ft_printb(t_stack	*stack, t_iter *index)
 {
-	int i;
-
-	i = 0;
 	puts("--------stack b---------");
-	while (i < index->count2)
+	while (index->count4 < index->count2)
 	{
-		printf("|          %d           |\n" ,  stack->array[i]);
-		i++;
+		printf("|          %d           |\n" ,  stack->array[index->count4]);
+		index->count4++;
 	}
 }
 
@@ -58,7 +55,9 @@ int main(int ac, char **av)
 	index.count3 = 0;
 	index.count4 = 0;
 	index.count5 = 0;
-	stackb.j = 0;
+	stack.j = -1;
+	index.num_arg = a;
+	index.num_sec = a;
 	if (ac == 1)
 		exit(0);
 	if (ac > 2)
@@ -79,7 +78,7 @@ int main(int ac, char **av)
 					if (strcmp(av[j], av[i]) == 0)
 					{
 						printf("%s", av[i]);
-						write(1, "duplicate\n", 11);
+						write(1, "Error\n", 7);
 						exit(1);
 					}
 				}
@@ -98,12 +97,13 @@ int main(int ac, char **av)
 		}
 		if (ac == 4)
 			rand_num(&stack, &index);
-		if (ac == 6)
+		if (ac > 4)
 		{
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			rand_5_num(&stack, &stackb, &index);
 			ft_printb(&stackb, &index);
 		}
+		//if (ac > 6)
 		ft_printa(&stack, &index, a);
 		//rand_num(&stack, &index);
 	}

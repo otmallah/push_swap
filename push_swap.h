@@ -29,6 +29,9 @@ typedef struct s_iter
 	int count3;
 	int count4;
 	int count5;
+	int idx;
+	int num_arg;
+	int num_sec;
 }	t_iter;
 
 

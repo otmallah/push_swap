@@ -40,14 +40,14 @@ void	only_num(char *str)
 			i++;
 		else
 		{
-			write (1, "only int\n", 10);
+			write (1, "Error\n", 7);
 			exit(0);
 		}
 	}
 	res = checker(str);
 	if (res != 1)
 	{
-		write (1, "only integer\n", 14);
+		write (1, "Error\n", 7);
 		exit(0);
 	}
 }
