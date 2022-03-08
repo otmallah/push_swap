@@ -7,15 +7,19 @@
 
 int	ft_tablen(t_stack	*stacka);
 
-int		push(t_stack *stack, int len, int value)
+int		push(t_stack *stack, int len, int value, t_stack *temp)
 {
 	if (!stack->array)
 		stack->i = 0;
 	if (!stack->array)
+	{
 		stack->array = malloc(sizeof(int) * len);
+		temp->array = malloc(sizeof(int) * len);
+	}
 	if (stack->i == len)
 		return 1;
 	stack->array[stack->i] = value;
+	temp->array[stack->i] = value;
 	stack->i++;
 	return 0;
 }
@@ -48,6 +52,7 @@ int main(int ac, char **av)
 
 	t_stack stack;
 	t_stack stackb;
+	t_stack stack_temp;
 	t_iter index;
 
 	index.count = 0;
@@ -91,19 +96,23 @@ int main(int ac, char **av)
 		j = 1;
 		while (i < a)
 		{
-			push(&stack, a, ft_atoi(av[j]));
+			push(&stack, a, ft_atoi(av[j]), &stack_temp);
 			j++;
 			i++;
 		}
+		ft_sort_param(&stack_temp, a);
 		if (ac == 4)
 			rand_num(&stack, &index);
-		if (ac > 4)
+		if (ac == 4)
 		{
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			rand_5_num(&stack, &stackb, &index);
 			ft_printb(&stackb, &index);
 		}
-		//if (ac > 6)
+		if (ac > 6)
+		{
+			rand_again(&stack,&stack_temp, &index);
+		}
 		ft_printa(&stack, &index, a);
 		//rand_num(&stack, &index);
 	}
