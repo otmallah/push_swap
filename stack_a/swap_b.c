@@ -32,7 +32,6 @@ void	puush_again(t_stack	*stackb, t_iter *index)
 
 void	push_b(t_stack	*stack_a, t_stack	*stack_b, t_iter *index)
 {
-
 	stack_b->array[index->count] = stack_a->array[index->count];
 	puush_again(stack_b, index);
 	index->count += 1;

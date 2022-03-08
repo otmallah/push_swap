@@ -13,13 +13,15 @@ int		push(t_stack *stack, int len, int value, t_stack *temp)
 		stack->i = 0;
 	if (!stack->array)
 	{
-		stack->array = malloc(sizeof(int) * len);
-		temp->array = malloc(sizeof(int) * len);
+		//puts("here");
+		stack->array = malloc(sizeof(int) * (len));
+		temp->array = malloc(sizeof(int) * (len));
 	}
 	if (stack->i == len)
 		return 1;
 	stack->array[stack->i] = value;
 	temp->array[stack->i] = value;
+	//printf("staack a = %d \n" , temp->array[stack->i]);
 	stack->i++;
 	return 0;
 }
@@ -60,6 +62,7 @@ int main(int ac, char **av)
 	index.count3 = 0;
 	index.count4 = 0;
 	index.count5 = 0;
+	//stack_temp.array = 0;
 	stack.j = -1;
 	index.num_arg = a;
 	index.num_sec = a;
@@ -100,19 +103,20 @@ int main(int ac, char **av)
 			j++;
 			i++;
 		}
-		ft_sort_param(&stack_temp, a);
 		if (ac == 4)
 			rand_num(&stack, &index);
-		if (ac == 4)
+		if (ac == 6)
 		{
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			rand_5_num(&stack, &stackb, &index);
-			ft_printb(&stackb, &index);
 		}
 		if (ac > 6)
 		{
-			rand_again(&stack,&stack_temp, &index);
+			stackb.array = (int *)malloc(sizeof(int) * a);
+			ft_sort_param(&stack_temp, a);
+			rand_again(&stack,&stack_temp, &stackb, &index);
 		}
+		ft_printb(&stackb, &index);
 		ft_printa(&stack, &index, a);
 		//rand_num(&stack, &index);
 	}
