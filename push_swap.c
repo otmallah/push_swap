@@ -116,8 +116,8 @@ int main(int ac, char **av)
 			ft_sort_param(&stack_temp, a);
 			rand_again(&stack,&stack_temp, &stackb, &index);
 		}
-		ft_printb(&stackb, &index);
-		ft_printa(&stack, &index, a);
+		//ft_printb(&stackb, &index);
+		//ft_printa(&stack, &index, a);
 		//rand_num(&stack, &index);
 	}
 	//system("leaks a.out");

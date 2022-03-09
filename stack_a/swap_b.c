@@ -47,5 +47,37 @@ void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index)
 	stacka->array[index->count3] = stackb->array[index->count4];
 	index->count4++;
 	write (1, "pa\n", 3);
-	//index->num_sec--;
 }     
+
+void	re_b(t_stack *stackb, t_iter *index)
+{
+	int a;
+	int i;
+
+	i = index->count4;
+	a = stackb->array[i];
+	while (i < (stackb->j - 1))
+	{
+		stackb->array[i] = stackb->array[i + 1];
+		i++;
+	}
+	if (i == (stackb->j - 1))
+		stackb->array[i] = a;
+	write(1, "rb\n", 3);
+}
+
+void	r_rev_b(t_stack *stackb , t_iter *index)
+{
+	int a;
+	int j = stackb->j - 1;
+
+	a = stackb->array[j];
+	while (j > index->count4)
+	{
+		stackb->array[j] = stackb->array[j - 1];
+		j--;
+	}
+	if (j == index->count4)
+		stackb->array[j] = a;
+	write(1, "rrb\n", 4);
+}

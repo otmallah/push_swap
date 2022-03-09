@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+void	ft_sort_100_num(t_stack *stacka, t_stack *stackb, t_iter *index);
+
 void    ft_rand_100(t_stack *stacka, t_stack *stack_temp, t_iter *index)
 {
 	int i;
@@ -35,60 +37,65 @@ void    ft_rand_100(t_stack *stacka, t_stack *stack_temp, t_iter *index)
 	}
 }
 
-
-//void    check_num(t_stack *stack, t_stack *stackb,t_iter *index , int idx)
-//{
-//	int i;
-//	int j;
-//	//int k;
-//
-//	i = index->count3;// i   = 4 ;
-//	printf("idx == %d \n" , i);
-//	j = index->num_arg / 2;
-//	//k = index->num_arg - 1;
-//	//printf("haa == %d  index = %d , idx === %d \n" , stack->array[index->count3] , index->count3 , idx);
-//	printf("jjjj == ------ %d\n" , j);
-//	if (idx < j)
-//	{
-//		while (i < idx)
-//		{
-//			rever_a(stack, index);
-//			i++;
-//		}
-//		push_b(stack, stackb, index);
-//	}
-//	else
-//	{
-//		while (i < ((index->num_arg + 1) - idx))
-//		{
-//			r_rev_a(stack, index);
-//			i++;
-//		}
-//		push_b(stack, stackb, index);
-//	}
-//}
-
 void    rand_again(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter *index)
 {
 	int i;
 	int ac;
+	int count;
 
 	i = 0;
-	ac = index->num_arg / 2;
+	count = 0;
+	ac = 0;
 	ft_rand_100(stacka, stack_temp, index);
-	while (ac > i)
+	while (ac < index->num_arg)
 	{
-		if ( stacka->array[index->count3] >= 0  && stacka->array[index->count3] < ac)
+		ac = ac + (index->num_arg / 5);
+		while (ac > i)
 		{
-			push_b(stacka, stackb, index);
-			i++;
+			//printf("ac === %d \n" , ac);
+			if ( stacka->array[index->count3] >= count  && stacka->array[index->count3] < ac)
+			{
+				push_b(stacka, stackb, index);
+				i++;
+			}
+			else if (stacka->array[index->count3] < ac)
+			{
+				r_rev_a(stacka, index);
+			}
+			else
+				rever_a(stacka, index);
 		}
-		else if (stacka->array[index->count3] < ac)
+		i = ac;
+		count = ac;
+	}
+	//r_rev_b(stackb, index);
+	//r_rev_b(stackb, index);
+	//r_rev_b(stackb, index);
+	//r_rev_b(stackb, index);
+	//re_b(stackb, index);
+	ft_sort_100_num(stacka, stackb, index);
+}
+
+void	ft_sort_100_num(t_stack *stacka, t_stack *stackb, t_iter *index)
+{
+	int i;
+	//int j;
+
+
+	i = index->num_arg - 1;
+	//printf("%d \n" , i);
+	while (i >= 0)
+	{
+		if (stackb->array[index->count4] == i)
 		{
-			rever_a(stacka, index);
+			push_a(stacka, stackb, index);
+			i--;
+		}
+		else if (stackb->array[index->count4] < i)
+		{
+			re_b(stackb, index);
 		}
 		else
-			r_rev_a(stacka, index);
+			r_rev_b(stackb, index);
 	}
-
 }

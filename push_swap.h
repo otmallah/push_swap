@@ -57,4 +57,6 @@ void	rand_5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index);
 void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index);
 void    ft_sort_param(t_stack *stack_temp , int ac);
 void    rand_again(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter *index);
+void	re_b(t_stack *stackb, t_iter *index);
+void	r_rev_b(t_stack *stackb , t_iter *index);
 #endif
