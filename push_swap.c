@@ -110,7 +110,7 @@ int main(int ac, char **av)
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			rand_5_num(&stack, &stackb, &index);
 		}
-		if (ac > 6)
+		if (ac > 4)
 		{
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			ft_sort_param(&stack_temp, a);
