@@ -30,6 +30,7 @@ typedef struct s_iter
 	int count4;
 	int count5;
 	int idx;
+	int idx2;
 	int num_arg;
 	int num_sec;
 }	t_iter;
@@ -59,4 +60,6 @@ void    ft_sort_param(t_stack *stack_temp , int ac);
 void    rand_again(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter *index);
 void	re_b(t_stack *stackb, t_iter *index);
 void	r_rev_b(t_stack *stackb , t_iter *index);
+void    ft_sort_500(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter *index);
+
 #endif

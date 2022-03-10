@@ -58,6 +58,8 @@ int main(int ac, char **av)
 	t_iter index;
 
 	index.count = 0;
+	index.idx = -1;
+	index.idx2 = -1;
 	index.count2 = 0;
 	index.count3 = 0;
 	index.count4 = 0;
@@ -105,21 +107,28 @@ int main(int ac, char **av)
 		}
 		if (ac == 4)
 			rand_num(&stack, &index);
-		if (ac == 6)
+		else if (ac == 6)
 		{
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			rand_5_num(&stack, &stackb, &index);
 		}
-		if (ac > 4)
+		else if (ac > 6 || ac == 5)
 		{
+			//puts("pppppok");
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			ft_sort_param(&stack_temp, a);
 			rand_again(&stack,&stack_temp, &stackb, &index);
 		}
+		//else if (ac > 130)
+		//{
+		//	puts("hana");
+		//	stackb.array = (int *)malloc(sizeof(int) * a);
+		//	ft_sort_param(&stack_temp, a);
+		//	ft_sort_500(&stackb, &stack_temp, &stackb, &index);
+		//}
 		//ft_printb(&stackb, &index);
 		//ft_printa(&stack, &index, a);
 		//rand_num(&stack, &index);
 	}
-	//system("leaks a.out");
-
+	//system("leaks push_swap");
 }
