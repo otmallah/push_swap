@@ -29,12 +29,12 @@ void     ft_sort_param(t_stack *stack_temp , int ac)
 		}
 		i++;
 	}
-	// i = 0;
-	// while (i < ac)
-	// {
-		// printf(" num temp  == %d \n" , stack_temp->array[i]);
-		// i++;
-	// }
+	//i = 0;
+	//while (i < ac)
+	//{
+	//printf(" num temp  == %d \n" , stack_temp->array[i]);
+	//i++;
+	//}
 }
 
 	// int i;

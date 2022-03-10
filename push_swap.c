@@ -105,6 +105,8 @@ int main(int ac, char **av)
 			j++;
 			i++;
 		}
+		//ft_sort_param(&stack_temp, a);
+		//ft_rand_100(&stack, &stack_temp, &index);
 		if (ac == 4)
 			rand_num(&stack, &index);
 		else if (ac == 6)
@@ -119,14 +121,13 @@ int main(int ac, char **av)
 			ft_sort_param(&stack_temp, a);
 			rand_again(&stack,&stack_temp, &stackb, &index);
 		}
-		//else if (ac > 130)
-		//{
-		//	puts("hana");
-		//	stackb.array = (int *)malloc(sizeof(int) * a);
-		//	ft_sort_param(&stack_temp, a);
-		//	ft_sort_500(&stackb, &stack_temp, &stackb, &index);
-		//}
-		//ft_printb(&stackb, &index);
+		else if (ac > 130)
+		{
+			//puts("hana");
+			stackb.array = (int *)malloc(sizeof(int) * a);
+			ft_sort_500(&stackb, &stack_temp, &stackb, &index);
+		}
+		////ft_printb(&stackb, &index);
 		//ft_printa(&stack, &index, a);
 		//rand_num(&stack, &index);
 	}

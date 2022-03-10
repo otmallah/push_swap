@@ -120,6 +120,7 @@ void    ft_rand_100(t_stack *stacka, t_stack *stack_temp, t_iter *index)
 			if (stacka->array[i] == stack_temp->array[j])
 			{
 				stacka->array[i] = j;
+				break ;
 			}
 			j++;
 		}
@@ -161,7 +162,7 @@ void    rand_again(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter
 		k = (index->num_arg - i);
 		while (ac > i)
 		{
-			if ( stacka->array[index->count3] >= count  && stacka->array[index->count3] < ac)
+			if (stacka->array[index->count3] >= count  && stacka->array[index->count3] < ac)
 			{
 				push_b(stacka, stackb, index);
 				i++;
