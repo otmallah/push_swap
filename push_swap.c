@@ -109,25 +109,26 @@ int main(int ac, char **av)
 		//ft_rand_100(&stack, &stack_temp, &index);
 		if (ac == 4)
 			rand_num(&stack, &index);
+		else if (ac != 101 && ac != 501 && ac )
+		{
+			//puts("hana");
+			stackb.array = (int *)malloc(sizeof(int) * a);
+			ft_sort_param(&stack_temp, a);
+			ft_sort_all(&stack, &stackb, &stack_temp, &index);
+		}
 		else if (ac == 6)
 		{
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			rand_5_num(&stack, &stackb, &index);
 		}
-		else if (ac > 6 || ac == 5)
+		else if (ac == 101 || ac == 501)
 		{
 			//puts("pppppok");
 			stackb.array = (int *)malloc(sizeof(int) * a);
 			ft_sort_param(&stack_temp, a);
 			rand_again(&stack,&stack_temp, &stackb, &index);
 		}
-		else if (ac > 130)
-		{
-			//puts("hana");
-			stackb.array = (int *)malloc(sizeof(int) * a);
-			ft_sort_500(&stackb, &stack_temp, &stackb, &index);
-		}
-		////ft_printb(&stackb, &index);
+		//ft_printb(&stackb, &index);
 		//ft_printa(&stack, &index, a);
 		//rand_num(&stack, &index);
 	}

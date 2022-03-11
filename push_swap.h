@@ -62,4 +62,5 @@ void	re_b(t_stack *stackb, t_iter *index);
 void	r_rev_b(t_stack *stackb , t_iter *index);
 void    ft_sort_500(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter *index);
 void    ft_rand_100(t_stack *stacka, t_stack *stack_temp, t_iter *index);
+void    ft_sort_all(t_stack *stacka, t_stack *stackb, t_stack *stack_temp, t_iter *index);
 #endif

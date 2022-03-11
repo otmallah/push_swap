@@ -103,33 +103,8 @@
 
 #include "push_swap.h"
 
+int		ft_searcha(t_stack *stacka, t_iter *index, int idx);
 void	ft_sort_100_num(t_stack *stacka, t_stack *stackb, t_iter *index);
-int	ft_searcha(t_stack *stacka, t_iter *index, int idx);
-
-void    ft_rand_100(t_stack *stacka, t_stack *stack_temp, t_iter *index)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	//printf("ooo === %d \n" , stack_temp->array[0]);
-	while (i <= index->num_arg - 1)
-	{
-		while (j <= index->num_arg - 1)
-		{
-			if (stacka->array[i] == stack_temp->array[j])
-			{
-				stacka->array[i] = j;
-				break ;
-			}
-			j++;
-		}
-		j = 0;
-		i++;
-	}
-}
-
 
 //void	ft_print_all(t_stack *stack, t_stack *stackb, t_iter *index, int ac, int idx, int count)
 //{
@@ -159,7 +134,7 @@ void    rand_again(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter
 	ft_rand_100(stacka, stack_temp, index);
 	while (ac < index->num_arg )
 	{
-		ac = ac + (index->num_arg / 5);
+		ac = ac + (index->num_arg / 10);
 		k = (index->num_arg - i);
 		while (ac > i)
 		{
@@ -168,19 +143,13 @@ void    rand_again(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter
 				push_b(stacka, stackb, index);
 				i++;
 			}
-			else if (ft_searcha(stackb, index, i) == 0)
+			else if (i < k)
 			{
-				while (!(stacka->array[index->count3] >= count  && stacka->array[index->count3] < ac))
-				{
-					rever_a(stacka, index);
-				}
+				rever_a(stacka, index);
 			}
 			else
 			{
-				while (!(stacka->array[index->count3] >= count  && stacka->array[index->count3] < ac))
-				{
-					r_rev_a(stacka, index);
-				}
+				r_rev_a(stacka, index);
 			}
 		}
 		i = ac;
