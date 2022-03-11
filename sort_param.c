@@ -12,12 +12,13 @@
 
 #include "push_swap.h"
 
-void     ft_sort_param(t_stack *stack_temp , int ac)
+void	ft_sort_param(t_stack *stack_temp, int ac)
 {
-	int i;
-	int temp = 0;
+	int	i;
+	int	temp;
 
 	i = 0;
+	temp = 0;
 	while (i < ac - 1)
 	{
 		if (stack_temp->array[i] > stack_temp->array[i + 1])
@@ -29,39 +30,4 @@ void     ft_sort_param(t_stack *stack_temp , int ac)
 		}
 		i++;
 	}
-	//i = 0;
-	//while (i < ac)
-	//{
-	//printf(" num temp  == %d \n" , stack_temp->array[i]);
-	//i++;
-	//}
 }
-
-	// int i;
-	// int j;
-	// //int k;
-
-	// i = index->count3;// i   = 4 ;
-	// //printf("paaok == %d \n" , i);
-	// j = index->num_arg / 2;
-	// //k = index->num_arg - 1;
-	// //printf("haa == %d  index = %d , idx === %d \n" , stack->array[index->count3] , index->count3 , idx);
-	// //printf("i == ------ %d\n" , i);
-	// if (idx < j)
-	// {
-	// 	while (i < idx)
-	// 	{
-	// 		rever_a(stack, index);
-	// 		i++;
-	// 	}
-	// 	push_b(stack, stackb, index);
-	// }
-	// else
-	// {
-	// 	while (i < ((index->num_arg + 1) - idx))
-	// 	{
-	// 		r_rev_a(stack, index);
-	// 		i++;
-	// 	}
-	// 	push_b(stack, stackb, index);
-	// }

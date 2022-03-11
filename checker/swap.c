@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_b.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otmallah <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 14:24:26 by otmallah          #+#    #+#             */
-/*   Updated: 2022/03/04 14:24:27 by otmallah         ###   ########.fr       */
+/*   Created: 2022/03/12 00:22:33 by otmallah          #+#    #+#             */
+/*   Updated: 2022/03/12 00:22:36 by otmallah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	puush_again(t_stack	*stackb, t_iter *index)
+void	puush_again2(t_stack	*stackb, t_iter *index)
 {
 	int	a;
 	int	i;
@@ -31,26 +31,24 @@ void	puush_again(t_stack	*stackb, t_iter *index)
 		stackb->array[0] = a;
 }
 
-void	push_b(t_stack	*stack_a, t_stack	*stack_b, t_iter *index)
+void	push_b2(t_stack	*stack_a, t_stack	*stack_b, t_iter *index)
 {
 	stack_b->array[index->count] = stack_a->array[index->count];
-	puush_again(stack_b, index);
+	puush_again2(stack_b, index);
 	index->count += 1;
 	stack_b->j++;
 	index->count3++;
 	index->count2++;
-	write (1, "pb\n", 3);
 }
 
-void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index)
+void	push_a2(t_stack *stacka, t_stack *stackb, t_iter *index)
 {
 	index->count3--;
 	stacka->array[index->count3] = stackb->array[index->count4];
 	index->count4++;
-	write (1, "pa\n", 3);
 }
 
-void	re_b(t_stack *stackb, t_iter *index)
+void	re_b2(t_stack *stackb, t_iter *index)
 {
 	int	a;
 	int	i;
@@ -64,10 +62,9 @@ void	re_b(t_stack *stackb, t_iter *index)
 	}
 	if (i == (stackb->j - 1))
 		stackb->array[i] = a;
-	write(1, "rb\n", 3);
 }
 
-void	r_rev_b(t_stack *stackb, t_iter *index)
+void	r_rev_b2(t_stack *stackb, t_iter *index)
 {
 	int	a;
 	int	j;
@@ -81,5 +78,4 @@ void	r_rev_b(t_stack *stackb, t_iter *index)
 	}
 	if (j == index->count4)
 		stackb->array[j] = a;
-	write(1, "rrb\n", 4);
 }

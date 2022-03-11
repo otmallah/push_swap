@@ -12,21 +12,20 @@
 
 #include "push_swap.h"
 
-void    ft_rand_100(t_stack *stacka, t_stack *stack_temp, t_iter *index)
+void	ft_rand_100(t_stack *sta, t_stack *st_tmp, t_iter *id)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	//printf("ooo === %d \n" , stack_temp->array[0]);
-	while (i <= index->num_arg - 1)
+	while (i <= id->num_arg - 1)
 	{
-		while (j <= index->num_arg - 1)
+		while (j <= id->num_arg - 1)
 		{
-			if (stacka->array[i] == stack_temp->array[j])
+			if (sta->array[i] == st_tmp->array[j])
 			{
-				stacka->array[i] = j;
+				sta->array[i] = j;
 				break ;
 			}
 			j++;

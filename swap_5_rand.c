@@ -14,15 +14,13 @@
 
 int	num(t_stack *stacka, t_iter *index)
 {
-	float i;
-	float p = 0;
-	int a = 0;
-	int b= 0;
-	int idx;
+	float	i;
+	float	p;
+	int		a;
+	int		b;
+	int		idx;
 
 	a = index->count3;
-	//printf("first a%d \n",a);
-	//printf("array%d \n",stacka->array[a]);
 	while (a < index->num_arg)
 	{
 		i = stacka->array[a] / 2;
@@ -40,21 +38,21 @@ int	num(t_stack *stacka, t_iter *index)
 		}
 		a++;
 	}
-	//printf("sghiire = %d \n" , b);
-	return idx;
+	return (idx);
 }
 
 void	rand5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index)
 {
-	int a;
-	int i = 0;
+	int	a;
+	int	i;
 
+	i = 0;
 	while (i < 2)
 	{
 		a = num(stack_a, index);
 		if (a == index->count3)
 		{
-			push_b(stack_a, stack_b,index);
+			push_b(stack_a, stack_b, index);
 			i++;
 		}
 		else if (a == index->count3 + 1)
@@ -67,9 +65,7 @@ void	rand5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index)
 		else if (a == index->count3 + 3)
 			r_rev_a(stack_a, index);
 		else if (a == index->count3 + 4)
-		{
 			r_rev_a(stack_a, index);
-		}
 	}
 }
 

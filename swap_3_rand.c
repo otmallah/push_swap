@@ -10,25 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-void    rand_num(t_stack *stack , t_iter *index)
+void	norme(t_stack *st, t_iter *id);
+
+void	rand_num(t_stack *st, t_iter *id)
 {
-    if (stack->array[index->count3] > stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3 + 2] && stack->array[index->count3 + 2] > stack->array[index->count3])
-        swap_a(stack, index);
-    else if (stack->array[index->count3 + 2] < stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3] && stack->array[index->count3 + 2] < stack->array[index->count3])
-    {
-        swap_a(stack , index);
-        r_rev_a(stack, index);
-    }
-    else if (stack->array[index->count3] > stack->array[index->count3 + 1] && stack->array[index->count3 + 1] < stack->array[index->count3 + 2] && stack->array[index->count3] > stack->array[index->count3 + 2])
-        rever_a(stack, index);
-    else if (stack->array[index->count3] <  stack->array[index->count3 + 1] && stack->array[index->count3] < stack->array[index->count3 + 2] && stack->array[index->count3 + 1] > stack->array[index->count3 + 2])
-    {
-        swap_a(stack, index);
-        rever_a(stack, index);
-    }
-    else if (stack->array[index->count3] < stack->array[index->count3 + 1] && stack->array[index->count3 + 1] > stack->array[index->count3 + 2] && stack->array[index->count3] > stack->array[index->count3 + 2])
-        r_rev_a(stack, index);
+	if (st->array[id->count3] > st->array[id->count3 + 1]
+		&& st->array[id->count3 + 1] < st->array[id->count3 + 2]
+		&& st->array[id->count3 + 2] > st->array[id->count3])
+		swap_a(st, id);
+	else if (st->array[id->count3 + 2] < st->array[id->count3 + 1]
+		&& st->array[id->count3 + 1] < st->array[id->count3]
+		&& st->array[id->count3 + 2] < st->array[id->count3])
+	{
+		swap_a(st, id);
+		r_rev_a(st, id);
+	}
+	else if (st->array[id->count3] > st->array[id->count3 + 1]
+		&& st->array[id->count3 + 1] < st->array[id->count3 + 2]
+		&& st->array[id->count3] > st->array[id->count3 + 2])
+		rever_a(st, id);
+	else if (st->array[id->count3] < st->array[id->count3 + 1]
+		&& st->array[id->count3] < st->array[id->count3 + 2]
+		&& st->array[id->count3 + 1] > st->array[id->count3 + 2])
+	{
+		swap_a(st, id);
+		rever_a(st, id);
+	}
+	norme(st, id);
+}
+
+void	norme(t_stack *st, t_iter *id)
+{
+	if (st->array[id->count3] < st->array[id->count3 + 1]
+		&& st->array[id->count3 + 1] > st->array[id->count3 + 2]
+		&& st->array[id->count3] > st->array[id->count3 + 2])
+		r_rev_a(st, id);
 }
