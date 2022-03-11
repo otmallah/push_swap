@@ -104,6 +104,7 @@
 #include "push_swap.h"
 
 void	ft_sort_100_num(t_stack *stacka, t_stack *stackb, t_iter *index);
+int	ft_searcha(t_stack *stacka, t_iter *index, int idx);
 
 void    ft_rand_100(t_stack *stacka, t_stack *stack_temp, t_iter *index)
 {
@@ -167,18 +168,44 @@ void    rand_again(t_stack *stacka, t_stack *stack_temp, t_stack *stackb, t_iter
 				push_b(stacka, stackb, index);
 				i++;
 			}
-			else if (i > k)
+			else if (ft_searcha(stackb, index, i) == 0)
 			{
-				r_rev_a(stacka, index);
+				while (!(stacka->array[index->count3] >= count  && stacka->array[index->count3] < ac))
+				{
+					rever_a(stacka, index);
+				}
 			}
-			else  if (i < k)
-				rever_a(stacka, index);
+			else
+			{
+				while (!(stacka->array[index->count3] >= count  && stacka->array[index->count3] < ac))
+				{
+					r_rev_a(stacka, index);
+				}
+			}
 		}
 		i = ac;
 		count = ac;
 	}
-	//int make*tab = stack_temp->array;
 	ft_sort_100_num(stacka, stackb, index);
+}
+
+int	ft_searcha(t_stack *stacka, t_iter *index, int idx)
+{
+	int i ;
+	int j;
+	int k = 0;
+
+	j = 0;
+	i = index->count3;
+	while (stacka->array[idx] != stacka->array[i])
+	{
+		i++;
+		j++;
+	}
+	k =  index->num_arg - i;
+	if (j <  k)
+		return 0;
+	return 1;
 }
 
 int	ft_search(t_stack *stackb, t_iter *index,int k, int idx)
