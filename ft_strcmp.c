@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instr.c                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otmallah <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 14:49:10 by otmallah          #+#    #+#             */
-/*   Updated: 2022/03/12 14:49:11 by otmallah         ###   ########.fr       */
+/*   Created: 2022/03/12 18:22:41 by otmallah          #+#    #+#             */
+/*   Updated: 2022/03/12 18:22:44 by otmallah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-void	ss(t_stack *sta, t_stack *stb, t_iter *index)
+int	ft_strcmp(char *s1, char *s2)
 {
-	swap_a2(sta, index);
-	swap_b(stb, index);
-}
+	int	i;
 
-void	rr(t_stack *sta, t_stack *stb, t_iter *index)
-{
-	rever_a2(sta, index);
-	re_b2(stb, index);
-}
-
-void	rrr(t_stack *sta, t_stack *stb, t_iter *index)
-{
-	r_rev_a2(sta, index);
-	r_rev_b2(sta, index);
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

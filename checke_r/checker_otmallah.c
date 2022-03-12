@@ -37,7 +37,6 @@ int	main(int ac, char **av)
 {
 	t_stack	stacka;
 	t_stack	stackb;
-	t_stack	stack_temp;
 	t_iter	index;
 
 	stacka.i = 0;

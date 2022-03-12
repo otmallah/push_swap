@@ -71,10 +71,7 @@ void	check_suii(t_stack *sta, t_iter *index)
 		i++;
 	}
 	if (j == index->num_arg - 1)
-	{
-		write(1, "mgadine hh\n", 12);
 		exit(0);
-	}
 }
 
 void	norme2(t_stack *stacka, t_stack *st_tm, char **av, int ac)

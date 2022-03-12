@@ -13,9 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <unistd.h>
-# include <limits.h>
-# include <string.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 typedef struct s_stack
@@ -59,6 +56,7 @@ void	sort2(t_stack *sta, t_stack *stb, t_iter *id);
 void	sort3(t_stack *sta, t_stack *st_tmp, t_stack *stb, t_iter *id);
 void	initial(t_iter *index, int a);
 void	check(char **av);
+int		ft_strcmp(char *s1, char *s2);
 
 //checker
 
@@ -72,7 +70,7 @@ void	swap_a2(t_stack *stack, t_iter *index);
 void	swap_b(t_stack *stackb, t_iter *index);
 void	ss(t_stack *sta, t_stack *stb, t_iter *index);
 void	rr(t_stack *sta, t_stack *stb, t_iter *index);
-void	rrr(t_stack *sta, t_stack *stb, t_iter *index);
+void	rrr(t_stack *sta, t_iter *index);
 void	ft_checker_inst(t_stack *stacka, t_stack *stackb, t_iter *index);
 
 #endif

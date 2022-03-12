@@ -16,32 +16,32 @@ void	check_sort(t_stack *stacka, t_iter *index);
 
 int	suii(char *str, t_stack *stacka, t_stack *stackb, t_iter *index)
 {
-	if (strcmp(str, "pa") == 0)
+	if (ft_strcmp(str, "pa") == 0)
 		push_a2(stacka, stackb, index);
-	else if (strcmp(str, "pb") == 0)
+	else if (ft_strcmp(str, "pb") == 0)
 		push_b2(stacka, stackb, index);
-	else if (strcmp(str, "sa") == 0)
+	else if (ft_strcmp(str, "sa") == 0)
 		swap_a2(stacka, index);
-	else if (strcmp(str, "ra") == 0)
+	else if (ft_strcmp(str, "ra") == 0)
 		rever_a2(stacka, index);
-	else if (strcmp(str, "rra") == 0)
+	else if (ft_strcmp(str, "rra") == 0)
 		r_rev_a2(stacka, index);
-	else if (strcmp(str, "rb") == 0)
+	else if (ft_strcmp(str, "rb") == 0)
 		re_b2(stackb, index);
-	else if (strcmp(str, "rrb") == 0)
+	else if (ft_strcmp(str, "rrb") == 0)
 		r_rev_b2(stackb, index);
-	else if (strcmp(str, "rrr") == 0)
-		rrr(stacka, stackb, index);
-	else if (strcmp(str, "rr") == 0)
+	else if (ft_strcmp(str, "rrr") == 0)
+		rrr(stacka, index);
+	else if (ft_strcmp(str, "rr") == 0)
 		rr(stacka, stackb, index);
-	else if (strcmp(str, "ss") == 0)
+	else if (ft_strcmp(str, "ss") == 0)
 		ss(stacka, stackb, index);
 	else
 		return (1);
 	return (0);
 }
 
-void	check_ok_ko(t_stack *stacka, t_stack *stackb, t_iter *index)
+void	check_ok_ko(t_stack *stacka, t_iter *index)
 {
 	int	i;
 
@@ -83,7 +83,7 @@ void	ft_checker_inst(t_stack *stacka, t_stack *stackb, t_iter *index)
 		}
 		str = get_next_line(0);
 	}
-	check_ok_ko(stacka, stackb, index);
+	check_ok_ko(stacka, index);
 }
 
 void	check_sort(t_stack *stacka, t_iter *index)
