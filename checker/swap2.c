@@ -54,3 +54,14 @@ void	r_rev_a2(t_stack *stack, t_iter *index)
 	if (j == index->count3)
 		stack->array[j] = a;
 }
+
+void	swap_b(t_stack *stackb, t_iter *index)
+{
+	int	a;
+	int	i;
+
+	i = index->count4;
+	a = stackb->array[i];
+	stackb->array[i] = stackb->array[i + 1];
+	stackb->array[i + 1] = a;
+}

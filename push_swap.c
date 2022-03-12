@@ -13,6 +13,7 @@
 #include "push_swap.h"
 
 void	norme2(t_stack *stacka, t_stack *st_tm, char **av, int ac);
+void	check_suii(t_stack *sta, t_iter *index);
 
 int	push(t_stack *stack, int len, int value, t_stack *temp)
 {
@@ -44,6 +45,7 @@ int	main(int ac, char **av)
 	if (ac > 2)
 	{
 		norme2(&stack, &stack_temp, av, ac);
+		check_suii(&stack, &index);
 		if (ac == 4)
 			rand_num(&stack, &index);
 		else if (ac != 101 && ac != 501)
@@ -52,6 +54,26 @@ int	main(int ac, char **av)
 			sort2(&stack, &stackb, &index);
 		else if (ac == 101 || ac == 501)
 			sort3(&stack, &stack_temp, &stackb, &index);
+	}
+}
+
+void	check_suii(t_stack *sta, t_iter *index)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < (index->num_arg - 1))
+	{
+		if (sta->array[i] < sta->array[i + 1])
+			j++;
+		i++;
+	}
+	if (j == index->num_arg - 1)
+	{
+		write(1, "mgadine hh\n", 12);
+		exit(0);
 	}
 }
 

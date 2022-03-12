@@ -69,5 +69,10 @@ void	r_rev_b2(t_stack *stackb, t_iter *index);
 void	r_rev_a2(t_stack *stack, t_iter *index);
 void	rever_a2(t_stack *stack, t_iter *index);
 void	swap_a2(t_stack *stack, t_iter *index);
+void	swap_b(t_stack *stackb, t_iter *index);
+void	ss(t_stack *sta, t_stack *stb, t_iter *index);
+void	rr(t_stack *sta, t_stack *stb, t_iter *index);
+void	rrr(t_stack *sta, t_stack *stb, t_iter *index);
+void	ft_checker_inst(t_stack *stacka, t_stack *stackb, t_iter *index);
 
 #endif
