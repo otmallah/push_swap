@@ -34,3 +34,14 @@ void	ft_rand_100(t_stack *sta, t_stack *st_tmp, t_iter *id)
 		i++;
 	}
 }
+
+void	suiii(t_stack *sta, t_iter *id)
+{
+	int	i;
+
+	i = 0;
+	if (sta->array[i] > sta->array[i + 1])
+		swap_a(sta, id);
+	else if (sta->array[i] < sta->array[i + 1])
+		swap_a(sta, id);
+}

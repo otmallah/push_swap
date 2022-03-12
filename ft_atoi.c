@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static long	ft_check(const char *str, int i, int n)
+static int	ft_check(const char *str, int i, int n)
 {
 	int	number;
 	int	help;

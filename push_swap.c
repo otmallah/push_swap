@@ -40,18 +40,20 @@ int	main(int ac, char **av)
 	t_iter	index;
 
 	initial(&index, (ac - 1));
-	if (ac == 1)
-		exit(0);
+	if (ac == 2)
+		norme2(&stack, &stack_temp, av, ac);
 	if (ac > 2)
 	{
 		norme2(&stack, &stack_temp, av, ac);
 		check_suii(&stack, &index);
 		if (ac == 4)
 			rand_num(&stack, &index);
+		else if (ac == 3)
+			suiii(&stack, &index);
+		else if (ac == 6)
+			sort2(&stack, &stack_temp, &stackb, &index);
 		else if (ac != 101 && ac != 501)
 			sort1(&stack, &stackb, &stack_temp, &index);
-		else if (ac == 6)
-			sort2(&stack, &stackb, &index);
 		else if (ac == 101 || ac == 501)
 			sort3(&stack, &stack_temp, &stackb, &index);
 	}

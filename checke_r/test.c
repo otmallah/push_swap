@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otmallah <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 18:28:44 by otmallah          #+#    #+#             */
-/*   Updated: 2022/03/12 18:28:47 by otmallah         ###   ########.fr       */
+/*   Created: 2022/03/13 00:01:24 by otmallah          #+#    #+#             */
+/*   Updated: 2022/03/13 00:01:26 by otmallah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_rand_100(t_stack *sta, t_stack *st_tmp, t_iter *id)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (s1[i] == '+' && (s2[i] != '+' && s2[i] != '-'))
-		i++;
-	while (s1[i] && s2[i])
+	j = 0;
+	while (i <= id->num_arg - 1)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		while (j <= id->num_arg - 1)
+		{
+			if (sta->array[i] == st_tmp->array[j])
+			{
+				sta->array[i] = j;
+				break ;
+			}
+			j++;
+		}
+		j = 0;
 		i++;
 	}
-	return (0);
 }

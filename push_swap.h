@@ -43,7 +43,7 @@ void	rever_a(t_stack *stack, t_iter *index);
 void	r_rev_a(t_stack	*stack, t_iter *index);
 void	rand_num(t_stack *stack, t_iter *index);
 void	push_b(t_stack	*stack_a, t_stack *stack_b, t_iter *index);
-void	rand_5_num(t_stack *stack_a, t_stack *stack_b, t_iter *index);
+void	rand_5_num(t_stack *sta, t_stack *stb, t_stack *temp, t_iter *index);
 void	push_a(t_stack *stacka, t_stack *stackb, t_iter *index);
 void	ft_sort_param(t_stack *stack_temp, int ac);
 void	rand_again(t_stack *sta, t_stack *st_tmp, t_stack *stb, t_iter *id);
@@ -52,11 +52,12 @@ void	r_rev_b(t_stack *stackb, t_iter *index);
 void	ft_rand_100(t_stack *sta, t_stack *st_tmp, t_iter *id);
 void	ft_sort_all(t_stack *sta, t_stack *stb, t_stack *st_tm, t_iter *id);
 void	sort1(t_stack *sta, t_stack *stb, t_stack *st_tp, t_iter *id);
-void	sort2(t_stack *sta, t_stack *stb, t_iter *id);
+void	sort2(t_stack *sta, t_stack *temp, t_stack *stb, t_iter *id);
 void	sort3(t_stack *sta, t_stack *st_tmp, t_stack *stb, t_iter *id);
 void	initial(t_iter *index, int a);
 void	check(char **av);
 int		ft_strcmp(char *s1, char *s2);
+void	suiii(t_stack *sta, t_iter *id);
 
 //checker
 

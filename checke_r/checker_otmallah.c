@@ -11,24 +11,23 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
 void	check_ok_ko(t_stack *stacka, t_iter *index);
 void	check_sort(t_stack *stacka, t_iter *index);
 void	norme3(t_stack *stacka, t_iter *index, char **av, t_stack *stb);
-void	ft_cheeeck(t_stack *sta, t_stack *stb, t_iter *index, char **av);
+void	ft_cheeeck(t_stack *sta, t_stack *temp, t_iter *index, char **av);
 
-int	push(t_stack *stack, t_stack *stackb, t_iter *id, int value)
+int	push(t_stack *stack, t_stack *temp, t_iter *id, int value)
 {
 	if (!stack->array)
 		stack->i = 0;
 	if (!stack->array)
-	{
 		stack->array = malloc(sizeof(int) * (id->num_arg));
-		stackb->array = malloc(sizeof(int) * (id->num_arg));
-	}
 	if (stack->i == id->num_arg)
 		return (1);
 	stack->array[stack->i] = value;
+	temp->array[stack->i] = value;
 	stack->i++;
 	return (0);
 }
@@ -37,6 +36,7 @@ int	main(int ac, char **av)
 {
 	t_stack	stacka;
 	t_stack	stackb;
+	t_stack	temp;
 	t_iter	index;
 
 	stacka.i = 0;
@@ -45,20 +45,24 @@ int	main(int ac, char **av)
 	index.num_arg = ac - 1;
 	if (ac == 1)
 		exit(0);
-	ft_cheeeck(&stacka, &stackb, &index, av);
+	stackb.array = malloc(sizeof(int) * (index.num_arg));
+	temp.array = malloc(sizeof(int) * (index.num_arg));
+	ft_cheeeck(&stacka, &temp, &index, av);
+	ft_sort_param(&temp, index.num_arg);
+	ft_rand_100(&stacka, &temp, &index);
 	ft_checker_inst(&stacka, &stackb, &index);
 }
 
-void	ft_cheeeck(t_stack *sta, t_stack *stb, t_iter *index, char **av)
+void	ft_cheeeck(t_stack *sta, t_stack *temp, t_iter *index, char **av)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 1;
 	while (i < index->num_arg)
 	{
-		push(sta, stb, index, ft_atoi(av[j]));
+		push(sta, temp, index, ft_atoi(av[j]));
 		j++;
 		i++;
 	}

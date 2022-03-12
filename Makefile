@@ -15,7 +15,8 @@ FILES =  push_swap.c stack_a/swap.c stack_a/swap_b.c swap_3_rand.c swap_5_rand.c
 		swap_4_rand.c checker_num.c ft_atoi.c  sort_param.c  index.c handle_err/handle.c
 
 BS = checke_r/checker_otmallah.c checke_r/get_next_line.c checke_r/swap.c checke_r/swap2.c \
-	ft_atoi.c checke_r/check.c checke_r/norme.c checke_r/instr.c ft_strcmp.c
+	ft_atoi.c checke_r/check.c checke_r/norme.c checke_r/instr.c ft_strcmp.c sort_param.c \
+	checke_r/test.c
 
 
 # Colors

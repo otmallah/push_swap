@@ -22,6 +22,8 @@ int	suii(char *str, t_stack *stacka, t_stack *stackb, t_iter *index)
 		push_b2(stacka, stackb, index);
 	else if (ft_strcmp(str, "sa") == 0)
 		swap_a2(stacka, index);
+	else if (ft_strcmp(str, "sb") == 0)
+		swap_b(stackb, index);
 	else if (ft_strcmp(str, "ra") == 0)
 		rever_a2(stacka, index);
 	else if (ft_strcmp(str, "rra") == 0)
@@ -50,8 +52,8 @@ void	check_ok_ko(t_stack *stacka, t_iter *index)
 	{
 		if (stacka->array[i] > stacka->array[i + 1])
 		{
-			write(1, "KO\n", 3);
-			exit(0);
+			write(1, "9KO\n", 3);
+			exit(1);
 		}
 		i++;
 	}

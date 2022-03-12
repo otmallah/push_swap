@@ -25,7 +25,7 @@ void	check(char **av)
 		{
 			if (i != j)
 			{
-				if (ft_strcmp(av[j], av[i]) == 0)
+				if (ft_atoi(av[j]) == ft_atoi(av[i]))
 				{
 					write(1, "Error\n", 7);
 					exit(1);

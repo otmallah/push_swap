@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
 void	sort1(t_stack *sta, t_stack *stb, t_stack *st_tp, t_iter *id)
 {
@@ -19,10 +20,11 @@ void	sort1(t_stack *sta, t_stack *stb, t_stack *st_tp, t_iter *id)
 	ft_sort_all(sta, stb, st_tp, id);
 }
 
-void	sort2(t_stack *sta, t_stack *stb, t_iter *id)
+void	sort2(t_stack *sta, t_stack *temp, t_stack *stb, t_iter *id)
 {
 	stb->array = (int *)malloc(sizeof(int) * id->num_arg);
-	rand_5_num(sta, stb, id);
+	ft_sort_param(temp, id->num_arg);
+	rand_5_num(sta, stb, temp, id);
 }
 
 void	sort3(t_stack *sta, t_stack *st_tmp, t_stack *stb, t_iter *id)
@@ -55,7 +57,7 @@ void	check(char **av)
 		{
 			if (i != j)
 			{
-				if (ft_strcmp(av[j], av[i]) == 0)
+				if (ft_atoi(av[j]) == ft_atoi(av[i]))
 				{
 					write(1, "Error\n", 7);
 					exit(1);
